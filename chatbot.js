@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const blueColor = '\x1b[34m';
 const greenColor = '\x1b[32m';
+const redColor = '\x1b[31m';
 
 const prompt = (msg) => {
     process.stdout.write(msg);
@@ -24,10 +25,10 @@ async function chatGPT() {
 
     let user = await prompt('Your name: ');
     process.stdout.write('\033c');
-    console.log(blueColor + `Welcome to ChatGPT but diff (low budget version), ${user}! Ask me anything!\nType 'exit' to quit.\n\n`);
+    console.log(redColor + `Welcome to ChatGPT but diff (low budget version), ${user}! Ask me anything!\nType 'exit' to quit.\n\n`);
 
-    let conversationId; // Initialize conversationId variable
-    let parentMessageId; // Initialize parentMessageId variable
+    let conversationId;
+    let parentMessageId;
 
     while (true) {
         const input = await prompt(blueColor + `${user}: `);
@@ -37,15 +38,15 @@ async function chatGPT() {
             return;
         } else {
             const apiResponse = await oraPromise(api.sendMessage(input, {
-                conversationId: conversationId, // Include the conversationId in the API call
-                parentMessageId: parentMessageId, // Include the parentMessageId in the API call
-                role: 'system', // Set the role to 'system' to make the bot respond to the message
+                conversationId: conversationId,
+                parentMessageId: parentMessageId,
+                role: 'system',
             }));
 
             console.log(greenColor + 'BrentGPT: ' + apiResponse.text + '\n\n');
 
-            conversationId = apiResponse.conversationId; // Update the conversationId for the next iteration
-            parentMessageId = apiResponse.parentMessageId; // Update the parentMessageId for the next iteration
+            conversationId = apiResponse.conversationId;
+            parentMessageId = apiResponse.parentMessageId;
         }
     }
 }
