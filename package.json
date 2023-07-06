@@ -1,0 +1,25 @@
+{
+  "name": "chatgpt-bot",
+  "version": "1.0.0",
+  "description": "ChatGPT in CLI",
+  "main": "chatbot.js",
+  "scripts": {
+    "start": "node chatbot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnonymouseHucker29/chatbot-cli"
+  },
+  "keywords": [
+    "bot",
+    "chatgpt"
+  ],
+  "author": "Brent Baylon",
+  "license": "ISC",
+  "dependencies": {
+    "chatgpt": "^5.2.5",
+    "dotenv": "^16.3.1",
+    "ora": "^6.3.1"
+  }
+}
