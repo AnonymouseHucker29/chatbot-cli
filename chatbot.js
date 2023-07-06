@@ -1,21 +1,3 @@
-/** import { Bard } from "googlebard";
-
-let cookies = `__Secure-3PSID=YAgxxnWz-Y57TSQiXzCfKvpkO4cQgmNRbB3y2IuQIiibd422w1kw5rga3oJqwE2HKMaFMg.`;
-let bot = new Bard(cookies, {
-    inMemory: false,
-    savePath: "./conversations.json",
-});
-let conversationId = "test_id";
-
-await bot.askStream(
-    (res) => {
-        console.log(res);
-    }, // returns the response
-    "What is science?",
-    conversationId,
-);
-*/
-
 require('dotenv').config();
 
 const blueColor = '\x1b[34m';
