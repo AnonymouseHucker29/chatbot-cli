@@ -1,7 +1,8 @@
 {
   "name": "chatgpt-bot",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "ChatGPT in CLI",
+  "type": "module",
   "main": "chatbot.js",
   "scripts": {
     "start": "node chatbot.js",
